@@ -5,7 +5,7 @@
  * @c: character to be printed
  * Return: returns written characters
  */
-char print(char *c)
+size_t print(char *c)
 {
-    return (write(STDOUT_FILENO, c, sizeof(c) - 1));
+    return (write (STDOUT_FILENO, c, strlen(c))); //create your STRLEN//
 }
