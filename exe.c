@@ -9,8 +9,8 @@
 char execution(const char *cmd)
 {
 	pid_t process;
-	process = fork()
-	
+	process = fork();
+
 	if (process < 0)
 	{
 		perror("fork");
@@ -18,7 +18,7 @@ char execution(const char *cmd)
 	}
 	else if (process == 0)
 	{
-		execlp(cmd, cmd , (char *)NULL);
+		execlp(cmd, cmd, (char *)NULL);
 		perror("execlp");
 		exit(EXIT_FAILURE);
 	}
