@@ -8,9 +8,7 @@
 
 char execution(const char *cmd)
 {
-	pid_t process;
-	process = fork();
-
+	pid_t process = fork();
 	if (process < 0)
 	{
 		perror("fork");
