@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
 	{
 		pprompt();
 		user_input();
-		/**execution();*/
+		execution();
 	}
 	return (0);
 }
