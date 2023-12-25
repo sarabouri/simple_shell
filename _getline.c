@@ -18,7 +18,8 @@ char *_getline()
 		free(buffer);
 		return (NULL);
 	}
-	for (j = 0, s != EOF && s != '\n', j++)
+
+	for (j = 0; s != EOF && s != '\n'; j++)
 	{
 		fflush(stdin);
 		readed = read(STDIN_FILENO, &s, 1);
@@ -49,7 +50,7 @@ char hundling(char *buff)
 {
 	int x;
 
-	for (x = 0, buff[x] != '\0', x++)
+	for (x = 0; buff[x] != '\0'; x++)
 	{
 		if (buff[x] == '#')
 		{
