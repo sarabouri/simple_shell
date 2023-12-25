@@ -7,5 +7,5 @@
  */
 size_t print(char *c)
 {
-    return (write (STDOUT_FILENO, c, strlen(c))); //create your STRLEN//
+	return (write(STDOUT_FILENO, c, strlen(c))); /*create your STRLEN*/
 }
