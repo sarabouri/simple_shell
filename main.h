@@ -10,10 +10,16 @@
 #include <sys/errno.h>
 #include <sys/stat.h>
 #include <sys/syscall.h>
+#include <sys/wait.h>
+#include <sys/types.h>
 #include <stddef.h>
+#include <fcntl.h>
+#include <errno.h>
+#include <linux/limits.h>
 /*our defines*/
 #define BUFSIZE 1024
 #define MAX_TOKEN 150
+
 /* our_fun */
 /*main.c*/
 char pprompt(char *x);
