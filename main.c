@@ -21,7 +21,7 @@ char pprompt(char *x)
  * Return: void.
  */
 
-void  user_input(char *command, size_t array)
+void user_input(char *command, size_t array)
 {
 	if (fgets(command, array, stdin) == NULL)
 	{
