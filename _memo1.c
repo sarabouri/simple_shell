@@ -1,9 +1,10 @@
 #include "main.h"
 
 /**
- * *_realloc - function used to realloc memory
- *@o_size: old size of poiter p
- *@n_size: new size of poiter p
+ * _realloc - function used to realloc memory
+ * @o_size: old size of poiter p
+ * @n_size: new size of poiter p
+ * @p: poiter
  * Return: poiter of reallocated memory
  */
 
@@ -32,11 +33,11 @@ void *_realloc(char *p, size_t o_size, size_t n_size)
 	return (n_p);
 }
 /**
- * _memcpy - this function copies memory area
+ *_memcpy - this function copies memory area
  * @d: destination memory area
  * @s: source memry area
  * @F: filled bytes
- * Retun: the poiter to destination
+ * Return: poiter to d
  */
 char *_memcpy(char *d, char *s, unsigned int F)
 {
@@ -49,7 +50,7 @@ char *_memcpy(char *d, char *s, unsigned int F)
 }
 /**
  * _fill_an_array - Fill an by constant byte
- * @a: void 
+ * @a: void
  * @element: integer
  * @L: Length integer
  * Return:void poiter
