@@ -67,4 +67,15 @@ void *_fill_an_array(void *a, int element, size_t L)
 
 	return (a);
 }
-
+/**
+ * free_koulshi - function that frees all
+ * @command: array of poiter
+ * @ligne: character poiter
+ */
+void free_koulshi(char **command, char *ligne)
+{
+	free(command);
+	free(ligne);
+	command = NULL;
+	ligne = NULL;
+}
