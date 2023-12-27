@@ -8,7 +8,7 @@
  * Return: poiter of reallocated memory
  */
 
-void *_realloc(char *p, size_t o_size, size_t n_size)
+void *_realloc(void *p, size_t o_size, size_t n_size)
 {
 	if (n_size == o_size)
 		return (p);
@@ -17,7 +17,7 @@ void *_realloc(char *p, size_t o_size, size_t n_size)
 		free(p);
 		return (NULL);
 	}
-	char *n_p = malloc(n_size);
+	void *n_p = malloc(n_size);
 
 	if (n_p == NULL)
 		return (NULL);
