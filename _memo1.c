@@ -50,7 +50,7 @@ char *_memcpy(char *d, char *s, unsigned int F)
 }
 /**
  * _fill_an_array - Fill an by constant byte
- * @a: void
+ * @a: void array
  * @element: integer
  * @L: Length integer
  * Return:void poiter
