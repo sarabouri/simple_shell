@@ -79,3 +79,18 @@ void free_koulshi(char **command, char *ligne)
 	command = NULL;
 	ligne = NULL;
 }
+/**
+ * free_enviro - function that frees environment variable array
+ * @enviro: environment variable
+ *  Return: void.
+ */
+void free_enviro(char **enviro)
+{
+	int j ;
+
+	for (j = 0; enviro[j]; j++)
+	{
+		free(enviro[j]);
+	}
+
+}
