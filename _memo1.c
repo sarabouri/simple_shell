@@ -50,7 +50,7 @@ char *_memcpy(char *d, char *s, unsigned int F)
 }
 /**
  * _fill_an_array - Fill an by constant byte
- * @a: void
+ * @a: void array
  * @element: integer
  * @L: Length integer
  * Return:void poiter
@@ -78,4 +78,19 @@ void free_koulshi(char **command, char *ligne)
 	free(ligne);
 	command = NULL;
 	ligne = NULL;
+}
+/**
+ * free_enviro - function that frees environment variable array
+ * @enviro: environment variable
+ *  Return: void.
+ */
+void free_enviro(char **enviro)
+{
+	int j ;
+
+	for (j = 0; enviro[j]; j++)
+	{
+		free(enviro[j]);
+	}
+
 }
