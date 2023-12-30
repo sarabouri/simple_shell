@@ -86,7 +86,7 @@ void free_koulshi(char **command, char *ligne)
  */
 void free_enviro(char **enviro)
 {
-	int j ;
+	int j;
 
 	for (j = 0; enviro[j]; j++)
 	{
