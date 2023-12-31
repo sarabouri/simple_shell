@@ -45,3 +45,21 @@ char *_strtok(char *s, const char *delimiter)
 	}
 	return (lm);
 }
+/**
+ * delim_check - this function checkes if character matches
+ * any other character
+ * @a: the character to check
+ * @s: the String to check
+ *  Return: on success 1 otherways 0.
+ */
+unsigned int delim_check(char a, const char *s)
+{
+	unsigned int x;
+
+	for (x = 0; s[x] != '\0'; x++)
+	{
+		if (a == s[x])
+			return (1);
+	}
+	return (0);
+}
