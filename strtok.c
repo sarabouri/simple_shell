@@ -63,3 +63,34 @@ unsigned int delim_check(char a, const char *s)
 	}
 	return (0);
 }
+/**
+ * parse_input - this function is used to parse
+ * the input command line
+ * @cmd: command of input tha user entered to parse
+ * Return: array of parsed characters.
+ */
+char **parse_input(char *cmd)
+{
+	char **tokens;
+	char *token;
+	int x, buffersize = BUFSIZE;
+
+	if (cmd == NULL)
+		return (NULL);
+	tokens = malloc(sizeof(char *) * buffersize);
+	if (!tokens)
+	{
+		perror("hsh"); /* need to verifythis one */
+		return (NULL);
+	}
+
+	token = _strtok(cmd, "\n ");
+	for (x = 0; token; x++)
+	{
+		tokens[x] = token;
+		token = _strtok(NULL, "\n ");
+	}
+	tokens[x] = NULL;
+
+	return (tokens);
+}
