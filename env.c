@@ -52,7 +52,30 @@ char *_build(char *token, char *value)
 
 	return (com);
 }
-
+/**
+ * check_builtin - check builtin
+ *
+ * @com: command to check
+ * Return: 0 success -1 fail
+*/
+int check_builtin(char **com)
+{
+	bul fun[] = {
+		{"cd", NULL},
+		{"echo", NULL},
+		{NULL, NULL}
+	};
+	int x = 0;
+	if (*com == NULL)
+		return (-1);
+	while ((fun + x)->comm)
+	{
+		if (_strcmp(com[0], (fun + x)->comm) == 0)
+			return (0);
+		x++;
+	}
+	return (-1);
+}
 /**
  * _getenv - call the PATH
  * @n: name my environment (PATH)

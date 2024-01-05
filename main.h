@@ -32,4 +32,10 @@ int _putchar(char c);
 /*getline.c*/
 char *_getline();
 char hundling(char *buff);
+
+typedef struct bulltin
+{
+	char *comm;
+	int (*fun)(char **line, int er);
+} bul
 #endif /* main.h */

@@ -48,7 +48,7 @@ int _cdir(char **com, __attribute__((unused))int x)
 		v1 = chdir(com[1]);
 	if (v1 == -1)
 	{
-		printed_error("ERROR");
+		perror("ERROR");
 		return (-1);
 	}
 
