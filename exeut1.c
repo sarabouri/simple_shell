@@ -83,3 +83,52 @@ void exit_f(char **com, char *buff, FILE *pf)
 	fclose(pf);
 	exit(statu);
 }
+/**
+ * check_com - this function excutes shell command
+ *
+ * @com: pars command
+ * @intp: User input
+ * @x: shell Excution time case of command not found
+ * @argv: progrm name
+ * Return: 1 case command NULL -1 Wrong command 0 command Excuted
+*/
+int check_com(char **com, char *intp, int x, char **argv)
+{
+	int sta;
+	pid_t pid;
+
+	if (*com == NULL)
+		return (-1);
+	pid = fork();
+	if (pid == -1)
+	{
+		perror("Error");
+		return (-1);
+	}
+
+	if (pid == 0)
+	{
+		if (_strncmp(*com, "./", 2) != 0 && _strncmp(*com, "/", 1) != 0)
+			path_com(com);
+		if (execve(*com, com, env) == -1)
+		{
+			printed_error(com[0], x, argv);
+			free(intp);
+			free(com);
+			exit(EXIT_FAILURE);
+		}
+		return (EXIT_SUCCESS);
+	}
+	wait(&sta);
+	return (0);
+}
+/**
+ * signal_handel - Handle Ctrl + c 
+ * @s: captured signal
+ * Return: void
+*/
+void signal_handel(int s)
+{
+	if (s == SIGINT)
+		PRINTED("\n$");
+}

@@ -77,6 +77,30 @@ int check_builtin(char **com)
 	return (-1);
 }
 /**
+ * handle_built - Handle builtin command
+ * @com: parsed command
+ * @er: statue of last excute
+ * Return: -1 fail 0 succes (Return: Exute Builtin)
+*/
+int handle_built(char **com, int er)
+{
+	bul bil[] = {
+		{"cd", _cdir},
+		{"env", pr_env},
+		{"echo", echo},
+		{NULL,NULL}
+	};
+	int x = 0;
+
+	while ((bil + x)->comm)
+	{
+		if (_strcmp(com[0], (bil + x)->comm) == 0)
+			return ((bil + x)->fun(com, er));
+		x++;
+	}
+	return (-1);
+}
+/**
  * _getenv - call the PATH
  * @n: name my environment (PATH)
  * Return: NULL.
