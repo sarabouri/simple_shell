@@ -6,13 +6,13 @@
  * @count: counter
  * Return: void.
  */
-void printed_error(char *cmd, int count, char **arv)
+void printed_error(char *cmd, int x, char **arv)
 {
 	char *error;
 
 	PRINTED(argv[0]);
 	PRINTED(": ");
-	er = _itoa(count); /* need to e veried*/
+	er = _toinput(x);
 	PRINTED(error);
 	free(error);
 	PRINTED(": ");
