@@ -25,7 +25,7 @@ char *_strchr(char *s, char a)
  * @l: number of characters to compare
  * Return: 0 if the strings match otherwise 1.
  */
-int *_strncmp(const char *str1, const char char *str2, size_t l)
+int *_strncmp(const char *str1, const char *str2, size_t l)
 {
 	size_t j;
 
