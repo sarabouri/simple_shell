@@ -30,13 +30,13 @@ int *_strncmp(const char *str1, const char *str2, size_t l)
 	size_t j;
 
 	if (str1 == NULL)
-		return (-1);
+		return -1;
 	for (j = 0; j < l && str2[j]; j++)
 	{
 		if (str1[j] != str2[j])
 		{
-			return (1);
+			return 1;
 		}
 	}
-	return (0);
+	return 0;
 }

@@ -36,7 +36,7 @@ void user_input(char *command, size_t array)
 			exit(EXIT_FAILURE);
 		}
 	}
-	command[strcspn(command, '\n')] = '\0';
+	command[strcspn(command, "\n")] = '\0';
 }
 /**
  * execution - this function is used to execute command files from the root

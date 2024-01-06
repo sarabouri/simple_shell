@@ -19,7 +19,7 @@ char *_strtok(char *s, const char *delimiter)
 		return (NULL);
 	for (x = 0; lm[x] != '\0'; x++)
 	{
-		if (delim_check(lm[i], delimiter) == 0)
+		if (delim_check(lm[x], delimiter) == 0)
 			break;
 	}
 	if (n[x] == '\0' || n[x] == '#')

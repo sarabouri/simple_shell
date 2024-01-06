@@ -33,7 +33,7 @@ char *_strcat(char *d, char *s)
  */
 char *_strdup(char *s)
 {
-	size_t L = _strlen(src) + 1;
+	size_t L = _strlen(s) + 1;
 	char *n_str = malloc(L * sizeof(char));
 
 	if (n_str == NULL)
@@ -41,7 +41,7 @@ char *_strdup(char *s)
 		return (NULL);
 	}
 
-	_strcpy(n_str, s);
+	_strcpy(n_str, *s);
 	return (n_str);
 }
 /**
@@ -87,13 +87,13 @@ int _strlen(char *str)
  * @s: source string
  * Return: the function returns the destination string
  */
-char _strcpy(char *d, char s)
+char *_strcpy(char* d, const char* s)
 {
 	int x;
 
 	x = 0;
 
-	while (s[i])
+	while (s[x])
 	{
 		d[x] = s[x];
 		x++;
