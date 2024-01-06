@@ -31,7 +31,7 @@ char *_getline()
 		buffer[j] = s;
 		if (j >= buffersize)
 		{
-			buffer = realloc(buffer, buffersize, buffersize + 1);
+			buffer = _realloc(buffer, buffersize, buffersize + 1);
 			if (buffer == NULL)
 				return (NULL);
 		}

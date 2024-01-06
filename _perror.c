@@ -10,9 +10,9 @@ void printed_error(char *cmd, int x, char **arv)
 {
 	char *error;
 
-	PRINTED(argv[0]);
+	PRINTED(arv[0]);
 	PRINTED(": ");
-	er = _toinput(x);
+	error = _toinput(x);
 	PRINTED(error);
 	free(error);
 	PRINTED(": ");
