@@ -38,7 +38,7 @@ void ftreat(char *line, int coun, FILE *pf, char ** argv)
 	char **com;
 	int str = 0;
 
-	com = pars_com(line);
+	com = parse_input(line);
 
 	if (_strncmp(com[0], "exit", 4) == 0)
 		exit_f(com, line, pf);
