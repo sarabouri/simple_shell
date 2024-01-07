@@ -38,7 +38,7 @@ char *_getline()
 
 	}
 	buffer[j] = '\0';
-	/*hundling(buffer)*/
+	hundling(buffer);
 	return (buffer);
 }
 /**

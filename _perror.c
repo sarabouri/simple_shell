@@ -8,7 +8,7 @@
  */
 void printed_error(char *cmd, int x, char **arv)
 {
-	char *error;
+	char *error = _toinput(x);
 
 	PRINTED(arv[0]);
 	PRINTED(": ");
