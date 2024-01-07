@@ -28,13 +28,18 @@ void _exit_d(char **com, char *buff, char **av, int i)
 		{
 			str = _itoa(com[1]);
 			free(buff);
-			fre(com);
+			free(com);
 			exit(st);
 		}
 	}
 }
 
-/***/
+/**
+ * _cdir - change dirctorie
+ * @com: parsed command
+ * @x: statue last command exuted
+ * Return: 0success 1 failed
+*/
 int _cdir(char **com, __attribute__((unused))int x)
 {
 	int v1 = -1;
@@ -61,7 +66,12 @@ int _cdir(char **com, __attribute__((unused))int x)
 	return (0);
 }
 
-/***/
+/**
+ * pr_env - display enviroment variable
+ * @com: parsed command
+ * @x: statue of last command excuted
+ * Return: always 0
+*/
 int pr_env(char **com, int x)
 {
 	size_t i;
@@ -76,7 +86,12 @@ int pr_env(char **com, int x)
 	return (0);
 }
 
-/***/
+/**
+ * echo - Excute echo cases
+ * @x: statue of last command excuted
+ * @com: parsed command
+ * Return: always 0 or excute normal echo
+*/
 int echo(char **com, int x)
 {
 	char *p;

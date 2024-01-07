@@ -124,7 +124,7 @@ char *_getenv(char *n)
 				perror("unable to alloc");
 				return (NULL);
 			}
-
+			z = 0;
 			for (y = n1 + 1; env[i][x]; x++, z++)
 			{
 				value[y] = env[x][y];
