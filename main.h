@@ -30,7 +30,7 @@ char execution(const char *cmd);
 /*putchar.c*/
 int _putchar(char c);
 /*getline.c*/
-char *_getline();
+char *_getline(__attribute__((unused)));
 char hundling(char *buff);
 /*_memo1*/
 void *_realloc(void *p, size_t o_size, size_t n_size);
@@ -54,7 +54,7 @@ int _strlen(char *str);
 char _strcpy(char *d, char s);
 /*string2.c*/
 char *_strchr(char *s, char a);
-int *_strncmp(const char *str1, const char char *str2, size_t l);
+int *_strncmp(const char *str1, const char *str2, size_t l);
 /*strtok.c*/
 char *_strtok(char *s, const char *delimiter);
 unsigned int delim_check(char a, const char *s);
