@@ -7,8 +7,7 @@
  * @p: poiter
  * Return: poiter of reallocated memory
  */
-
-void *_realloc(void *p, size_t o_size, size_t n_size)
+void *_realloc(void *p, unsigned int o_size, unsigned int n_size)
 {
 	if (n_size == o_size)
 		return (p);
