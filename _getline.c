@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#define char *_getline(void);
 
 /**
  * _getline - it's a function that reads the line written in the input
