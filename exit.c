@@ -103,3 +103,16 @@ int echo(char **com, int x)
 		return (print_echo(com));
 	return (1);
 }
+/**
+ * _intl - determine legth of int
+ * @n: giveen int
+ * Return: length of int
+*/
+int _intl(int n)
+{
+	int l;
+
+	for (l = 0; n != 0; l++)
+		n /= 10;
+	return (l);
+}

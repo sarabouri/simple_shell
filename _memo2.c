@@ -64,3 +64,47 @@ int _ischar(int x)
 	else
 		return (0);
 }
+/**
+ * _toinput - convert int to char
+ * @x: int to convert
+ * Return: char pointer
+*/
+char _toinput(unsigned int x)
+{
+	int l, a = 0;
+	char *c;
+
+	l = _intl(x);
+	s = malloc(l + 1);
+	if (!c)
+		return (NULL);
+	*c = '\0';
+	for (a = 0; c[a]; a++)
+	{
+		l[a] = (x % 10) + '0';
+		n /= 10;
+		a++;
+	}
+	c[a] = (x % 10) + '0';
+	array_rv(c, l);
+	c[a + 1] = '\0';
+	return (c);
+}
+/**
+ * array_rv - Reverse array
+ * @ar: array to reverse
+ * @l: length of array
+ * Return: void(Reverse array)
+*/
+void array_rv(char *ar, int l)
+{
+	int x;
+	char tmp;
+
+	for (x = 0; x < (l / 2); x++)
+	{
+		tmp = ar[x];
+		ar[x] = ar[(l - 1) - x];
+		ar[(l - 1) - x] = tmp;
+	}
+} 
