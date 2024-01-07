@@ -3,10 +3,8 @@
 /**
  * _getline - it's a function that reads the line written in the input
  *
- *
  * Return: return input
  */
-
 char *_getline()
 {
 	int j, buffersize = BUFSIZE;
