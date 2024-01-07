@@ -7,7 +7,7 @@
  * Return: return input
  */
 
-char *_getline(__attribute__((unused)))
+char *_getline(void)
 {
 	int j, buffersize = BUFSIZE;
 	char readed, s = 0;
