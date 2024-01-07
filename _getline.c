@@ -10,7 +10,7 @@
 char *_getline()
 {
 	int j, buffersize = BUFSIZE;
-	char readed, s;
+	char readed, s = 0;
 	char *buffer = malloc(buffersize);
 
 	if (buffer == NULL)
@@ -26,9 +26,14 @@ char *_getline()
 		if (readed == 0)
 		{
 			free(buffer);
-			return ("\0");
+			return ("EXIT_SUCCESS");
 		}
 		buffer[j] = s;
+		if (buffer[0] == '\n')
+		{
+			free(buffer);
+			return ("\0");
+		}
 		if (j >= buffersize)
 		{
 			buffer = _realloc(buffer, buffersize, buffersize + 1);
