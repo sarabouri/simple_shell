@@ -30,7 +30,7 @@ char execution(const char *cmd);
 /*putchar.c*/
 int _putchar(char c);
 /*getline.c*/
-int *_getline();
+__attribute__((unused)) char *_getline();
 char hundling(char *buff);
 /*_memo1*/
 void *_realloc(void *p, size_t o_size, size_t n_size);
