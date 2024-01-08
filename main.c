@@ -96,7 +96,7 @@ int main(int argc, char *arv[])
 		}
 		else if (check_builtin(command) == 0)
 		{
-			str = handle_built(command, line);
+			str = handle_built((char **)command, str);
 			continue;
 		}
 		else
