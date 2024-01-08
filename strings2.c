@@ -36,5 +36,5 @@ int *_strncmp(const char *str1, const char *str2, size_t l)
 		if (str1[j] != str2[j])
 			return (1);
 	}
-	return 0;
+	return (0);
 }

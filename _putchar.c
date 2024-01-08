@@ -40,7 +40,8 @@ void ptint_n(int m)
 		c = -c;
 	}
 	if ((c / 10) > 0)
-			print_n(c / 10);
-
+	{
+		print_n(c / 10);
+	}
 	_putchar(c % 10 + '0');
 }
