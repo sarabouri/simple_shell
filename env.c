@@ -14,7 +14,7 @@ int com_path(char **com)
 	value = _strtok(path, ":");
 
 	do {
-		compath = _build(com, value);
+		compath = _build((char **)com, value);
 		if (stat(compath, &buff) == 0)
 		{
 			*com = _strdup(compath);
@@ -43,7 +43,9 @@ char *_build(char *token, char *value)
 	com = malloc(sizeof(char) * len);
 
 	if (com == NULL)
+	{
 		return (NULL);
+	}
 	memset(com, 0, len);
 
 	com = _strcat(com, value);

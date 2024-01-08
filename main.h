@@ -65,6 +65,7 @@ char **parse_input(char *cmd);
 int printd_echo(char **com);
 int _itoa(char *x);
 int _ischar(int x);
+char _toinput(unsigned int x);
 /*exit.c*/
 void _exit_d(char **com, char *buff, char **av, int i);
 int _cdir(char **com, __attribute__((unused))int x);
