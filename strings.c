@@ -87,7 +87,7 @@ int _strlen(char *str)
  * @s: source string
  * Return: the function returns the destination string
  */
-char *_strcpy(char* d, const char* s)
+char *_strcpy(char *d, const char *s)
 {
 	int x;
 
