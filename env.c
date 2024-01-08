@@ -7,7 +7,7 @@
 */
 int com_path(char **com)
 {
-	int stat buff;
+	struct stat buff;
 	char *path, *compath, *value;
 
 	path = _getenv("PATH");
@@ -24,7 +24,7 @@ int com_path(char **com)
 		}
 		free(compath);
 		value = _strtok(NULL, ":");
-	} while (value != NULL)
+	} while (value != NULL);
 	free(path);
 	return (1);
 }
