@@ -71,7 +71,7 @@ int pr_env(char **com, int x);
 int echo(char **com, int x);
 /*exect1.c*/
 void read_f(char *fname, char **argv);
-void ftreat(char *line, int coun, FILE *pf, char ** argv);
+void ftreat(char *line, int coun, FILE *pf, char **argv);
 void exit_f(char **com, char *buff, FILE *pf);
 int check_com(char **com, char *intp, int x, char **argv);
 void signal_handel(int s);

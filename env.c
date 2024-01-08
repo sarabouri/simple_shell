@@ -66,6 +66,7 @@ int check_builtin(char **com)
 		{NULL, NULL}
 	};
 	int x = 0;
+
 	if (*com == NULL)
 		return (-1);
 	while ((fun + x)->comm)
@@ -88,7 +89,7 @@ int handle_built(char **com, int er)
 		{"cd", _cdir},
 		{"env", pr_env},
 		{"echo", echo},
-		{NULL,NULL}
+		{NULL, NULL}
 	};
 	int x = 0;
 

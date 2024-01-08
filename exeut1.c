@@ -9,13 +9,13 @@ void read_f(char *fname, char **argv)
 {
 	FILE *pf;
 	char *line = NULL;
-	size_t len =0 ;
+	size_t len = 0;
 	int coun = 0;
 
 	pf = fopen(fname, "r");
 	if (pf == NULL)
 		exit(EXIT_FAILURE);
-	while ((_getline(&line, &len,pf)) != -1)
+	while ((_getline(&line, &len, pf)) != -1)
 	{
 		coun++;
 		ftreat(line, counter, pf, argv);
@@ -33,7 +33,7 @@ void read_f(char *fname, char **argv)
  * @argv: program name
  * Return: excute a line void
 */
-void ftreat(char *line, int coun, FILE *pf, char ** argv)
+void ftreat(char *line, int coun, FILE *pf, char **argv)
 {
 	char **com;
 	int str = 0;
@@ -65,7 +65,7 @@ void exit_f(char **com, char *buff, FILE *pf)
 	int statu;
 	int i = 0;
 
-	if (com[1][i] = NULL)
+	if (com[1][i] == NULL)
 	{
 		free(buff);
 		free(com);
@@ -123,7 +123,7 @@ int check_com(char **com, char *intp, int x, char **argv)
 	return (0);
 }
 /**
- * signal_handel - Handle Ctrl + c 
+ * signal_handel - Handle Ctrl + c
  * @s: captured signal
  * Return: void
 */

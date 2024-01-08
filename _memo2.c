@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * p_echo - excute normal Echo
+ * printd_echo - excute normal Echo
  * @com: parsed command
  * Return: 0 success -1 fail
 */
@@ -12,11 +12,14 @@ int printd_echo(char **com)
 	pid = fork();
 	if (pid == 0)
 	{
-		if(execve("/bin/echo", com, env) == -1)
+		if (execve("/bin/echo", com, env) == -1)
 			return (-1);
 		exit(EXIT_FAILURE);
+
 		else if (pid < 0)
+		{
 			return (-1);
+		}
 		else
 		{
 			do {
@@ -34,6 +37,7 @@ int printd_echo(char **com)
 int _itoa(char *x)
 {
 	int a, b, c, d;
+
 	a = c = 0;
 	d = 1;
 	while ((x[a] < '0' || s[a] > '9') && (s[a] != '\0'))
@@ -107,4 +111,4 @@ void array_rv(char *ar, int l)
 		ar[x] = ar[(l - 1) - x];
 		ar[(l - 1) - x] = tmp;
 	}
-} 
+}
