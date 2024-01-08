@@ -22,10 +22,9 @@ extern char **env;
 #define BUFSIZE 1024
 #define MAX_TOKEN 150
 #define PRINTED(c) (write(STDOUT_FILENO, c, _strlen(c)))
-
 /* our_fun */
 /*main.c*/
-char pprompt(char *x);
+void pprompt(void);
 void user_input(char *command, size_t array);
 char execution(const char *cmd);
 /*putchar.c*/
