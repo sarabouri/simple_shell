@@ -21,6 +21,7 @@ extern char **env;
 /*our defines*/
 #define BUFSIZE 1024
 #define MAX_TOKEN 150
+#define PRINTED(c) (write(STDOUT_FILENO, c, _strlen(c)))
 
 /* our_fun */
 /*main.c*/
@@ -30,10 +31,10 @@ char execution(const char *cmd);
 /*putchar.c*/
 int _putchar(char c);
 /*getline.c*/
-__attribute__((unused)) char *_getline();
+char *_getline(void);
 char hundling(char *buff);
 /*_memo1*/
-void *_realloc(void *p, size_t o_size, size_t n_size);
+void *_realloc(void *p, unsigned int o_size, unsigned int n_size);
 char *_memcpy(char *d, char *s, unsigned int F);
 void *_fill_an_array(void *a, int element, size_t L);
 void free_koulshi(char **command, char *ligne);
