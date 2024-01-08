@@ -4,7 +4,7 @@
  * @com: parsed command
  * Return: 0 success -1 fail
 */
-int p_echo(char **com)
+int printd_echo(char **com)
 {
 	pid_t pid;
 	int statu;

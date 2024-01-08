@@ -61,7 +61,7 @@ char *_strtok(char *s, const char *delimiter);
 unsigned int delim_check(char a, const char *s);
 char **parse_input(char *cmd);
 /*_memo2.c*/
-int p_echo(char **com);
+int printd_echo(char **com);
 int _itoa(char *x);
 int _ischar(int x);
 /*exit.c*/
@@ -80,5 +80,5 @@ typedef struct bulltin
 {
 	char *comm;
 	int (*fun)(char **line, int er);
-} bul
+} bul;
 #endif /* main.h */

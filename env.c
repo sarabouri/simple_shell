@@ -125,7 +125,7 @@ char *_getenv(char *n)
 				return (NULL);
 			}
 			z = 0;
-			for (y = n1 + 1; env[i][x]; x++, z++)
+			for (y = n1 + 1; env[1][x]; x++, z++)
 			{
 				value[y] = env[x][y];
 			}
