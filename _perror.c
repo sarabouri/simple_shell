@@ -3,7 +3,7 @@
  * printed_error - a function that prints error
  * @cmd: user command input
  * @arv: prog name
- * @count: counter
+ * @x: counter
  * Return: void.
  */
 void printed_error(char *cmd, int x, char **arv)
