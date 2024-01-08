@@ -30,6 +30,8 @@ void user_input(char *command, size_t array);
 char execution(const char *cmd);
 /*putchar.c*/
 int _putchar(char c);
+void print_n(unsigned int m);
+void ptint_n(int m);
 /*getline.c*/
 char *_getline(void);
 char hundling(char *buff);
@@ -40,7 +42,7 @@ void *_fill_an_array(void *a, int element, size_t L);
 void free_koulshi(char **command, char *ligne);
 void free_enviro(char **enviro);
 /*preorr*/
-void printed_error(char *cmd, int count, char **arv);
+void printed_error(char *cmd, int x, char **arv);
 /*env.c*/
 int com_path(char **com);
 char *_build(char *token, char *value);
@@ -75,10 +77,15 @@ void ftreat(char *line, int coun, FILE *pf, char **argv);
 void exit_f(char **com, char *buff, FILE *pf);
 int check_com(char **com, char *intp, int x, char **argv);
 void signal_handel(int s);
-/*typeds*/
+
+/**
+ * struct bulltin - this struct contains bultin to handle and func
+ * @comm: Pointer
+ * @fun: when bultin is true fun is executed
+*/
 typedef struct bulltin
 {
-	char *comm;
 	int (*fun)(char **line, int er);
+	char *comm;
 } bul;
 #endif /* main.h */

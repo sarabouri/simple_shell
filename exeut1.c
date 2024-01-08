@@ -18,7 +18,7 @@ void read_f(char *fname, char **argv)
 	while ((_getline(&line, &len, pf)) != -1)
 	{
 		coun++;
-		ftreat(line, counter, pf, argv);
+		ftreat(line, coun, pf, argv);
 	}
 	if (line)
 		free(line);

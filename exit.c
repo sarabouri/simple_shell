@@ -15,13 +15,13 @@ void _exit_d(char **com, char *buff, char **av, int i)
 	{
 		free(buff);
 		free(com);
-		exit(EIT_SUCCESS);
+		exit(EXIT_SUCCESS);
 	}
 	for (x = 0; com[1][x]; x++)
 	{
 		if (_ischar(com[1][x++]) != 0)
 		{
-			printed_erroe(av, i, com);
+			printed_error(av, i, com);
 			break;
 		}
 		else
@@ -29,7 +29,7 @@ void _exit_d(char **com, char *buff, char **av, int i)
 			str = _itoa(com[1]);
 			free(buff);
 			free(com);
-			exit(st);
+			exit(str);
 		}
 	}
 }
@@ -46,9 +46,13 @@ int _cdir(char **com, __attribute__((unused))int x)
 	char str[1000];
 
 	if (com[1] == NULL)
-		v1 = chdir(_getenv("HOME");
+	{
+		v1 = chdir(_getenv("HOME"));
+	}
 	else if (_strcmp(com[1], "_") == 0)
+	{
 		v1 = chdir(_getenv("OLDPWD"));
+	}
 	else
 		v1 = chdir(com[1]);
 	if (v1 == -1)
@@ -60,8 +64,8 @@ int _cdir(char **com, __attribute__((unused))int x)
 	else if (v1 != -1)
 	{
 		getcwd(str, sizeof(str));
-		setenv("OLDPWD", _getenv("PWD"), 1);
-		setenv("PWD", cwd, 1);
+		setenv("OLDPWD", (const char *)_getenv("PWD"), 1);
+		setenv("PWD", (const char *)com, 1);
 	}
 	return (0);
 }
@@ -80,7 +84,7 @@ int pr_env(char **com, int x)
 	for (i = 0; env[i] != NULL; i++)
 	{
 		y = _strlen(env[i]);
-		write(1, env[i]);
+		write(1, env[i], y);
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	return (0);
@@ -109,13 +113,13 @@ int echo(char **com, int x)
 	}
 	else if (_strncmp(com[1], "$PATH", 5) == 0)
 	{
-		path = _getenv("PATH");
-		PRINTED(path);
+		p = _getenv("PATH");
+		PRINTED(p);
 		PRINTED("\n");
-		free(path);
+		free(p);
 	}
 	else
-		return (print_echo(com));
+		return (printd_echo(com));
 	return (1);
 }
 /**
