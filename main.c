@@ -2,16 +2,13 @@
 
 /**
  * pprompt - this function is used to display the prompt
- * @x : character that refers to $
- * Return: 0 on success
+ *
  */
 
-char pprompt(char *x)
+void pprompt(void)
 {
-	x = "$";
 
-	printf("%s", x);
-	return (0);
+	PRINTED("$ ");
 }
 
 /**
@@ -75,12 +72,38 @@ char execution(const char *cmd)
 
 int main(int argc, char *arv[])
 {
+	char *line, **command;
+	int x = 0, status = 1, str = 0;
+	(void)argc;
 
-	while (1)
+	if (arv[1] != NULL)
+		read_f(arv[1], arv);
+	signal(SIGINT, signal_handel); /*need to be verifies*/
+	while (status)
 	{
-		pprompt();
-		user_input();
-		execution();
+		x++;
+		if (isatty(STDIN_FILENO))
+			pprompt();
+		line = _getline();
+		if (line[0] == '\0')
+		{
+			continue;
+		}
+		command = parse_input(line);
+		if (_strcmp(command[0], "exit") == 0)
+		{
+			_exit_d(command, line, arv, x);
+		}
+		else if (check_builtin(command) == 0)
+		{
+			str = handle_built(command, line);
+			continue;
+		}
+		else
+		{
+			str = check_com(command, line, x, arv);
+		}
+		free_koulshi(command, line);
 	}
-	return (0);
+	return (status);
 }
