@@ -46,7 +46,7 @@ void printed_error(char *cmd, int x, char **arv);
 int com_path(char **com);
 char *_build(char *token, char *value);
 int check_builtin(char **com);
-int handle_built(char **com, int *er);
+int handle_built(char **com, int er);
 char *_getenv(char *n);
 /*string1.c*/
 char *_strcat(char *d, char *s);
