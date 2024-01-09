@@ -83,19 +83,18 @@ char _toinput(unsigned int x)
 	c = malloc(l + 1);
 	if (!c)
 	{
-		return ('\0');
+		return (NULL);
 	}
-	*c = '\0';
+	c[l] = '\0';
+
 	while (x / 10)
 	{
-		c[a] = (x % 10) + '0';
+		c[l - 1 - a] = (x % 10) + '0';
 		x /= 10;
 		a++;
 	}
-	c[a] = (x % 10) + '0';
-	array_rv(c, l);
-	c[a + 1] = '\0';
-	return (1);
+	c[l -1 - a] = (x % 10) + '0';
+	return (c);
 }
 /**
  * array_rv - Reverse array
