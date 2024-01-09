@@ -57,8 +57,9 @@ char *_memcpy(char *d, char *s, unsigned int F)
 void *_fill_an_array(void *a, int element, size_t L)
 {
 	char *p = a;
+	size_t j;
 
-	for (size_t j = 0; j < L; j++)
+	for (j = 0; j < L; j++)
 	{
 		*p = (char)element;
 		p;
