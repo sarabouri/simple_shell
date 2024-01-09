@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * printed_error - a function that prints error
+ * pr_error - a function that prints error
  * @cmd: user command input
  * @arv: prog name
  * @x: counter
@@ -9,6 +9,7 @@
 void pr_error(char **arv, int x, char **cmd)
 {
 	char *error;
+
 	error = _toinput(x);
 
 	PRINTED(arv[0]);
@@ -24,8 +25,10 @@ void pr_error(char **arv, int x, char **cmd)
 }
 /**
  * printed_error - this function
- *
- *
+ * @cmd:input command
+ * @x:integer
+ * @arv: argument
+ *ٌ Return: void
  */
 void printed_error(char *cmd, int x, char **arv)
 {
@@ -33,7 +36,7 @@ void printed_error(char *cmd, int x, char **arv)
 
 	PRINTED(arv[0]);
 	PRINTED(": ");
-	er = _toinput(x);
+	error = _toinput(x);
 	PRINTED(error);
 	PRINTED(": ");
 	PRINTED(cmd);

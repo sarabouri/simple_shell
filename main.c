@@ -65,7 +65,7 @@ char execution(const char *cmd)
 
 /**
  * main - Entry point
- * @argv: standard input (stdin)
+ * @arv: standard input (stdin)
  * @argc: number of arguments
  * Return: 0 on success
  */
