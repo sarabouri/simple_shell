@@ -63,8 +63,8 @@ char *_build(char *token, char *value)
 int check_builtin(char **com)
 {
 	bul fun[] = {
-		{"cd", NULL},
-		{"echo", NULL},
+		{"cd", cd},
+		{"echo", echo},
 		{NULL, NULL}
 	};
 	int x = 0;
