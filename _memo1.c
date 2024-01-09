@@ -9,25 +9,27 @@
  */
 void *_realloc(void *p, unsigned int o_size, unsigned int n_size)
 {
-		if (n_size == o_size)
+	void *n_p;
+
+	if (n_size == o_size)
 		return (p);
 	if (n_size == 0 && p)
 	{
 		free(p);
 		return (NULL);
 	}
-	void *n_p = malloc(n_size);
-
+	n_p = malloc(n_size);
 	if (n_p == NULL)
 		return (NULL);
-	if (p != NULL)
+	if (p == NULL)
 	{
-		_memcpy(n_p, p, o_size);
+		_fill_an_array(n_p, '\0', n_size);
 		free(p);
 	}
 	else
 	{
-		_fill_an_array(n_p, '\0', n_size);
+		_memcpy(n_p, p, o_size);
+		free(p);
 	}
 	return (n_p);
 }
