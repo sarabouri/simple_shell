@@ -67,11 +67,13 @@ int printd_echo(char **com);
 int _itoa(char *x);
 int _ischar(int x);
 char _toinput(unsigned int x);
+void array_rv(char *ar, int l);
 /*exit.c*/
 void _exit_d(char **com, char *buff, char **av, int i);
 int _cdir(char **com, __attribute__((unused))int x);
 int pr_env(char **com, int x);
 int echo(char **com, int x);
+int _intl(int n);
 /*exect1.c*/
 void read_f(char *fname, char **argv);
 void ftreat(char *line, int coun, FILE *pf, char **argv);
