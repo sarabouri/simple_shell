@@ -21,7 +21,7 @@ void _exit_d(char **com, char *buff, char **av, int i)
 	{
 		if (_ischar(com[1][x++]) != 0)
 		{
-			printed_error(av, i, com);
+			pr_error(av, i, com);
 			break;
 		}
 		else

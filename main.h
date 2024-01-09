@@ -41,7 +41,8 @@ void *_fill_an_array(void *a, int element, size_t L);
 void free_koulshi(char **command, char *ligne);
 void free_enviro(char **enviro);
 /*preorr*/
-void printed_error(char **arv, int x, char **cmd);
+void pr_error(char **arv, int x, char **cmd);
+void printed_error(char *cmd, int x, char **arv);
 /*env.c*/
 int com_path(char **com);
 char *_build(char *token, char *value);
