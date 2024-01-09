@@ -6,17 +6,36 @@
  * @x: counter
  * Return: void.
  */
+void pr_error(char **arv, int x, char **cmd)
+{
+	char *error;
+	error = _toinput(x);
+
+	PRINTED(arv[0]);
+	PRINTED(": ");
+	PRINTED(error);
+	PRINTED(": ");
+	PRINTED(cmd[0]);
+	PRINTED(": illegal number: ");
+	PRINTED(cmd[1]);
+	PRINTED("\n");
+	free(error);
+
+}
+/**
+ *
+ *
+ *
+ */
 void printed_error(char *cmd, int x, char **arv)
 {
 	char *error;
 
 	PRINTED(arv[0]);
 	PRINTED(": ");
-	error = _toinput(x);
+	er = _toinput(x);
 	PRINTED(error);
-	free(error);
 	PRINTED(": ");
 	PRINTED(cmd);
-	PRINTED(": notfound\n");
-
+	PRINTED(": not found \n");
 }
