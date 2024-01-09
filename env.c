@@ -14,7 +14,7 @@ int com_path(char **com)
 	value = _strtok(path, ":");
 
 	do {
-		compath = _build((char **)com, value);
+		compath = _build(com, value);
 		if (stat(compath, &buff) == 0)
 		{
 			*com = _strdup(compath);
@@ -70,7 +70,7 @@ int check_builtin(char **com)
 	int x = 0;
 
 	if (*com == NULL)
-		return (-1);
+	return (-1);
 	while ((fun + x)->comm)
 	{
 		if (_strcmp(com[0], (fun + x)->comm) == 0)
