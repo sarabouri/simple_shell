@@ -15,7 +15,7 @@ void read_f(char *fname, char **argv)
 	pf = fopen(fname, "r");
 	if (pf == NULL)
 		exit(EXIT_FAILURE);
-	while ((_getline(&line, &len, pf)) != -1)
+	while ((getline(&line, &len, pf)) != -1)
 	{
 		coun++;
 		ftreat(line, coun, pf, argv);
@@ -65,7 +65,7 @@ void exit_f(char **com, char *buff, FILE *pf)
 	int statu;
 	int i = 0;
 
-	if (com[1][i] == NULL)
+	if (com[1] == NULL)
 	{
 		free(buff);
 		free(com);
@@ -109,7 +109,7 @@ int check_com(char **com, char *intp, int x, char **argv)
 	if (pid == 0)
 	{
 		if (_strncmp(*com, "./", 2) != 0 && _strncmp(*com, "/", 1) != 0)
-			path_com(com);
+			com_path(com);
 		if (execve(*com, com, env) == -1)
 		{
 			printed_error(com[0], x, argv);
