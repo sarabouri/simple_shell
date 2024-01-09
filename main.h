@@ -41,7 +41,7 @@ void *_fill_an_array(void *a, int element, size_t L);
 void free_koulshi(char **command, char *ligne);
 void free_enviro(char **enviro);
 /*preorr*/
-void printed_error(char *cmd, int x, char **arv);
+void printed_error(char **arv, int x, char **cmd);
 /*env.c*/
 int com_path(char **com);
 char *_build(char *token, char *value);
@@ -53,10 +53,10 @@ char *_strcat(char *d, char *s);
 char *_strdup(char *s);
 int _strcmp(char *str1, char *str2);
 int _strlen(char *str);
-char _strcpy(char *d, char s);
+char *_strcpy(char *d, const char *s);
 /*string2.c*/
 char *_strchr(char *s, char a);
-int *_strncmp(const char *str1, const char *str2, size_t l);
+int _strncmp(const char *str1, const char *str2, size_t l);
 /*strtok.c*/
 char *_strtok(char *s, const char *delimiter);
 unsigned int delim_check(char a, const char *s);
