@@ -76,7 +76,7 @@ int _cdir(char **com, __attribute__((unused))int x)
  * @x: statue of last command excuted
  * Return: always 0
 */
-int pr_env(char **com, int x)
+int pr_env(__attribute__((unused))char **com, __attribute__((unused))int x)
 {
 	size_t i;
 	int y;

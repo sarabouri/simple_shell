@@ -53,7 +53,7 @@ char *_strcat(char *d, char *s);
 char *_strdup(char *s);
 int _strcmp(char *str1, char *str2);
 int _strlen(char *str);
-char *_strcpy(char *d, const char *s);
+char *_strcpy(char *d, char *s);
 /*string2.c*/
 char *_strchr(char *s, char a);
 int _strncmp(const char *str1, const char *str2, size_t l);
