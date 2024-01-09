@@ -132,6 +132,8 @@ int _intl(int n)
 	int l;
 
 	for (l = 0; n != 0; l++)
+	{
 		n /= 10;
+	}
 	return (l);
 }

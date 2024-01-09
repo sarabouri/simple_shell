@@ -17,7 +17,7 @@ int printd_echo(char **com)
 			return (-1);
 		}
 		exit(EXIT_FAILURE);
-		else if (pid < 0)
+		if (pid < 0)
 		{
 			return (-1);
 		}
@@ -41,10 +41,10 @@ int _itoa(char *x)
 
 	a = c = 0;
 	d = 1;
-	while ((x[a] < '0' || x[a] > '9') && (s[a] != '\0'))
+	while ((x[a] < '0' || x[a] > '9') && (x[a] != '\0'))
 	{
 		if (x[a] == '_')
-			x *= -1;
+			d *= -1;
 		a++;
 	}
 	b = a;
@@ -80,7 +80,7 @@ char _toinput(unsigned int x)
 	char *c;
 
 	l = _intl(x);
-	s = malloc(l + 1);
+	c = malloc(l + 1);
 	if (!c)
 		return (NULL);
 	*c = '\0';
