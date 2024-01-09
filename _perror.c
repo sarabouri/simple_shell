@@ -6,7 +6,7 @@
  * @x: counter
  * Return: void.
  */
-void printed_error(char **arv, int x, char **cmd)
+void printed_error(char *arv, int x, char **cmd)
 {
 	char *error;
        /*	= _toinput(x);*/
