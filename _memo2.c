@@ -84,10 +84,10 @@ char _toinput(unsigned int x)
 	if (!c)
 		return (NULL);
 	*c = '\0';
-	for (a = 0; c[a]; a++)
+	while (x / 10)
 	{
-		l[a] = (x % 10) + '0';
-		n /= 10;
+		c[a] = (x % 10) + '0';
+		x /= 10;
 		a++;
 	}
 	c[a] = (x % 10) + '0';
