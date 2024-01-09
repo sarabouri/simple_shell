@@ -23,7 +23,7 @@ void pr_error(char **arv, int x, char **cmd)
 
 }
 /**
- *
+ * printed_error - this function
  *
  *
  */
