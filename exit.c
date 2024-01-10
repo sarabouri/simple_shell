@@ -81,10 +81,10 @@ int pr_env(__attribute__((unused))char **com, __attribute__((unused))int x)
 	size_t i;
 	int y;
 
-	for (i = 0; env[i] != NULL; i++)
+	for (i = 0; environ[i] != NULL; i++)
 	{
-		y = _strlen(env[i]);
-		write(1, env[i], y);
+		y = _strlen(environ[i]);
+		write(1, environ[i], y);
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	return (0);

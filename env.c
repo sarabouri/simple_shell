@@ -117,11 +117,11 @@ char *_getenv(char *n)
 	size_t n1, v1;
 
 	n1 = _strlen(n);
-	for (x = 0; env[x]; x++)
+	for (x = 0; environ[x]; x++)
 	{
-		if (_strncmp(n, env[x], n1) == 0)
+		if (_strncmp(n, environ[x], n1) == 0)
 		{
-			v1 = _strlen(env[x]) - n1;
+			v1 = _strlen(environ[x]) - n1;
 			value =  malloc(sizeof(char) * v1);
 			if (!value)
 			{
@@ -130,9 +130,9 @@ char *_getenv(char *n)
 				return (NULL);
 			}
 			z = 0;
-			for (y = n1 + 1; env[1][x]; x++, z++)
+			for (y = n1 + 1; environ[1][x]; x++, z++)
 			{
-				value[y] = env[x][y];
+				value[y] = environ[x][y];
 			}
 			value[z] = '\0';
 

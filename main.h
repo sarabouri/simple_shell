@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-extern char **env;
+extern char **environ;
 
 /*libary*/
 #include <unistd.h>

@@ -12,7 +12,7 @@ int printd_echo(char **com)
 	pid = fork();
 	if (pid == 0)
 	{
-		if (execve("/bin/echo", com, env) == -1)
+		if (execve("/bin/echo", com, environ) == -1)
 		{
 			return (-1);
 		}
