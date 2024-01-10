@@ -88,7 +88,7 @@ void signal_handel(int s);
 */
 typedef struct bulltin
 {
-	int (*fun)(char**line, int er);
+	int (*fun)(char **line, int er);
 	char *comm;
 } bul_t;
 #endif /* main.h */
