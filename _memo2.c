@@ -74,9 +74,9 @@ int _ischar(int x)
  * @x: int to convert
  * Return: char pointer
 */
-char _toinput(unsigned int x)
+char *_toinput(unsigned int x)
 {
-	int l, a = 0;
+	int l = 0, a = 0;
 	char *c;
 
 	l = _intl(x);
@@ -95,7 +95,7 @@ char _toinput(unsigned int x)
 	c[a] = (x % 10) + '0';
 	array_rv(c, l);
 	c[a + 1] = '\0';
-	return (1);
+	return (c);
 }
 /**
  * array_rv - Reverse array

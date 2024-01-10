@@ -66,7 +66,7 @@ char **parse_input(char *cmd);
 int printd_echo(char **com);
 int _itoa(char *x);
 int _ischar(int x);
-char _toinput(unsigned int x);
+char *_toinput(unsigned int x);
 void array_rv(char *ar, int l);
 /*exit.c*/
 void _exit_d(char **com, char *buff, char **av, int i);
@@ -88,7 +88,7 @@ void signal_handel(int s);
 */
 typedef struct bulltin
 {
-	int (*fun)(char **line, int er);
+	int (*fun)(char**line, int er);
 	char *comm;
-} bul;
+} bul_t;
 #endif /* main.h */

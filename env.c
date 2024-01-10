@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * com_path - Search in PATH for executable command
  * @com: parsed input
@@ -14,7 +13,7 @@ int com_path(char **com)
 	value = _strtok(path, ":");
 
 	do {
-		compath = _build(com, value);
+		compath = _build((char *)com, value);
 		if (stat(compath, &buff) == 0)
 		{
 			*com = _strdup(compath);
@@ -62,15 +61,18 @@ char *_build(char *token, char *value)
 */
 int check_builtin(char **com)
 {
-	bul fun[] = {
-		{"cd", cd},
-		{"echo", echo},
+	bul_t fun[] = {
+		{NULL, "cd"},
+		{NULL, "echo"},
 		{NULL, NULL}
 	};
+
 	int x = 0;
 
 	if (*com == NULL)
-	return (-1);
+	{
+		return (-1);
+	}
 	while ((fun + x)->comm)
 	{
 		if (_strcmp(com[0], (fun + x)->comm) == 0)
@@ -87,10 +89,10 @@ int check_builtin(char **com)
 */
 int handle_built(char **com, int er)
 {
-	bul bil[] = {
-		{"cd", _cdir},
-		{"env", pr_env},
-		{"echo", echo},
+	bul_t bil[] = {
+		{_cdir, "cd"},
+		{pr_env, "env"},
+		{echo, "echo"},
 		{NULL, NULL}
 	};
 	int x = 0;
