@@ -1,5 +1,4 @@
 #include "main.h"
-extern char **env;
 
 /**
  * pprompt - this function is used to display the prompt
