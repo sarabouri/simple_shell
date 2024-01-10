@@ -64,7 +64,7 @@ int _cdir(char **com, __attribute__((unused))int x)
 	else if (v1 != -1)
 	{
 		getcwd(str, sizeof(str));
-		setenv("OLDPWD", (const char *)_getenv("PWD"), 1);
+		setenv("OLDPWD", getenv("PWD"), 1);
 		setenv("PWD", (const char *)com, 1);
 	}
 	return (0);
