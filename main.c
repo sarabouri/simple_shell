@@ -107,17 +107,3 @@ int main(int argc, char *arv[])
 	}
 	return (status);
 }
-/**
- * env_creating - this function is used to create an
- * array of environment variable
- * @env: environment variable's array
- * Return:  void.
- */
-void env_creating(char **env)
-{
-	int j;
-
-	for (j = 0; env[j]; j++)
-		env[j] = _strdup(environ[j]);
-	env[j] = NULL;
-}
