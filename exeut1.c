@@ -110,7 +110,7 @@ int check_com(char **com, char *intp, int x, char **argv)
 	{
 		if (_strncmp(*com, "./", 2) != 0 && _strncmp(*com, "/", 1) != 0)
 			com_path(com);
-		if (execve(com[0], com, environ) == -1)
+		if (execve(*com, com, environ) == -1)
 		{
 			printed_error(com[0], x, argv);
 			free(intp);
